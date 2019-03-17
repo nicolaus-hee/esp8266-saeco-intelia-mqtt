@@ -19,15 +19,15 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 
 * Philips Saeco Intelia coffee maker
 * ESP8266 (I use model E12 on the Wemos D1 Mini Lite breakout board)
-* 2 x 1k resistor to read background led color of display
-* 1 x 2N2222A transistor *for every button you want to trigger*
-* 1 x 1k resistor *for every button you want to trigger*
-* a prototype board, basic wire etc.
+* 2 x 1 kΩ resistor to read background led color of display
+* 4 x 2N2222A transistor (1 for every button we want to trigger)
+* 4 x 1 kΩ resistor (1 for every button we want to trigger)
+* A prototype board, basic wire etc.
 
 ## What the code does
 
-* Read current machine status (red / yellow / green)
-* Press buttons
+* Read current machine status (off / red / yellow / green)
+* Press power, small / large coffee, tea water buttons
 * Communicate status info to MQTT server
 * Listen to MQTT server for commands
 
@@ -86,10 +86,10 @@ Switch item=CoffeeMaker_LargeCoffee label="Kaffee groß" icon="kitchen" mappings
 Switch item=CoffeeMaker_TeaWater label="Teewasser" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
 ```
 
-## IFTTT applet
+## IFTTT applet & Google Assistant integration
 
-* expose commands to be linked in Openhab cloud service settings
-* create IFTTT applet
+* Expose commands to be linked in Openhab cloud service settings
+* Create IFTTT applet
 * If: Google Assistant / say a simple phrase
 * Then: Openhab / Send a command
 
