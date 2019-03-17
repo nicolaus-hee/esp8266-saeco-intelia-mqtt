@@ -82,10 +82,10 @@ Item id: CoffeeMaker_LastLogEntry
 ```
 Switch item=CoffeeMaker_OnOff label="On / off" icon="switch"
 Default item=CoffeeMaker_CoffeeMakerStatus label="Status" icon="rgb"
-Default item=CoffeeMaker_LastLogEntry label="Letztes Ereignis" icon="text"
-Switch item=CoffeeMaker_SmallCoffee label="Kaffee klein" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
-Switch item=CoffeeMaker_LargeCoffee label="Kaffee groß" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]      	
-Switch item=CoffeeMaker_TeaWater label="Teewasser" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
+Default item=CoffeeMaker_LastLogEntry label="Last event" icon="text"
+Switch item=CoffeeMaker_SmallCoffee label="Small coffee" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
+Switch item=CoffeeMaker_LargeCoffee label="Large coffee" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]      	
+Switch item=CoffeeMaker_TeaWater label="Tea water" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
 ```
 
 ## IFTTT applet & Google Assistant integration
