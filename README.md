@@ -6,8 +6,8 @@ Control a Philips Saeco Intelia coffee maker with an ESP8266 and MQTT.
 Integrate my Saeco coffee maker into Openhab to control it with MQTT and Google Assistant voice commands.
 
 I wanted to be able to:
-* Switch my coffee maker on/off
-* See the current status (on / off / ready / warning)
+* Switch coffee maker on / off
+* Read current status (on / off / ready / warning)
 * Trigger espresso button
 * Trigger large coffee button
 * Trigger tea water button
@@ -30,10 +30,6 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 * Press buttons
 * Communicate status info to MQTT server
 * Listen to MQTT server for commands
-
-## What the code does not do / possible extensions
-
-*WIP*
 
 ## Openhab integration
 
@@ -94,5 +90,12 @@ Switch item=CoffeeMaker_TeaWater label="Teewasser" icon="kitchen" mappings=[ON="
 
 * expose commands to be linked in Openhab cloud service settings
 * create IFTTT applet
-  * If: Google Assistant / say a simple phrase
-  * Then: Openhab / Send a command
+* If: Google Assistant / say a simple phrase
+* Then: Openhab / Send a command
+
+## What the code does not do / possible extensions
+
+- [ ] Read specific display status messages (e.g. out of water, beans etc.)
+- [ ] Skip decalcification warning
+- [ ] Push cup under coffee outlet (and only after heat up flushing ;-))
+- [ ] Coffee consumption statistics
