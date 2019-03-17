@@ -19,7 +19,7 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 
 * Philips Saeco Intelia coffee maker
 * ESP8266 (I use model E12 on the Wemos D1 Mini Lite breakout board)
-* 2 x 1k resistor to read led color of display backghr
+* 2 x 1k resistor to read background led color of display
 * 1 x 2N2222A transistor *for every button you want to trigger*
 * 1 x 1k resistor *for every button you want to trigger*
 * a prototype board, basic wire etc.
