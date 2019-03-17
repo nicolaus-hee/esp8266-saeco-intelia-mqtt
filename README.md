@@ -3,7 +3,7 @@ Control a Philips Saeco Intelia coffee maker with an ESP8266 and MQTT.
 
 ## Objective & inspiration
 
-Integrate my Saeco coffee maker into Openhab to control it with MQTT and Google Assistant voice commands.
+Integrate my Saeco coffee maker into [openHAB](https://openhab.org) to control it with MQTT and Google Assistant voice commands.
 
 I wanted to be able to:
 * Switch coffee maker on / off
@@ -11,7 +11,7 @@ I wanted to be able to:
 * Trigger espresso button
 * Trigger large coffee button
 * Trigger tea water button
-* Communicate via MQTT for easy integration with Openhab
+* Communicate via MQTT for easy integration with openHAB
 
 I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaCo/smart_coffee_machine) and [bntdumas's "Add WiFi to your coffee machine" tutorial](http://www.bntdumas.com/2015/07/15/how-to-add-wifi-to-your-coffee-machine-part-1/) but have a slightly different model and wanted to implement it in Arduino code, not LUA.
 
@@ -31,7 +31,9 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 * Communicate status info to MQTT server
 * Listen to MQTT server for commands
 
-## Openhab integration
+## openHAB integration
+
+I'm using the [MQTT binding for openHAB](https://www.openhab.org/addons/bindings/mqtt/) (currently version 2.4.0).
 
 ### Channels & items
 
@@ -88,10 +90,10 @@ Switch item=CoffeeMaker_TeaWater label="Teewasser" icon="kitchen" mappings=[ON="
 
 ## IFTTT applet & Google Assistant integration
 
-* Expose commands to be linked in Openhab cloud service settings
+* Expose commands to be linked in [openHAB cloud connector](https://www.openhab.org/v2.3/addons/integrations/openhabcloud/) settings
 * Create IFTTT applet
-* If: Google Assistant / say a simple phrase
-* Then: Openhab / Send a command
+* If: Google Assistant / Say a simple phrase
+* Then: openHAB / Send a command
 
 ## What the code does not do / possible extensions
 
