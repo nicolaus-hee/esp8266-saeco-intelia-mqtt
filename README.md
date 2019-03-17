@@ -43,6 +43,8 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 Label: Coffee maker status
 MQTT state topic: stat/coffee_maker/STATUS
 Incoming value transformation: JSONPATH:$.STATUS
+Item type: String
+Item id: CoffeeMaker_CoffeeMakerStatus
 
 Label: On / Off
 MQTT state topic: stat/coffee_maker/POWER
