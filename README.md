@@ -32,7 +32,7 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 Coffee machine control board (before wiring it up)
 
 ![Prototype board (without ESP8266)](https://github.com/nicolaus-hee/esp8266-saeco-intelia-mqtt/blob/master/images/prototype_board_without_esp8266.jpg)
-Prototype board (withotu ESP8266)
+Prototype board (without ESP8266)
 
 ![Prototype board inside coffee machine](https://github.com/nicolaus-hee/esp8266-saeco-intelia-mqtt/blob/master/images/prototype_board_with_esp8266_in_coffee_machine.jpg)
 Prototype board inside coffee machine
