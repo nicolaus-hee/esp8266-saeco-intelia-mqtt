@@ -35,46 +35,62 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 
 *WIP*
 
-## Openhab item / sitemap integration
+## Openhab integration
 
-### Channels
+### Channels & items
 
 ```
 Label: Coffee maker status
 MQTT state topic: stat/coffee_maker/STATUS
 Incoming value transformation: JSONPATH:$.STATUS
 
-Label: ON / OFF
+Label: On / Off
 MQTT state topic: stat/coffee_maker/POWER
 MQTT command topic: cmnd/coffee_maker/PB4
 Incoming value transformation: JSONPATH:$.POWER
+Item type: Switch
+Item id: CoffeeMaker_OnOff
 
 Label: Small coffee
 MQTT state topic: stat/coffee_maker/STATUS
 MQTT command topic: cmnd/coffee_maker/PB1
 Incoming value transformation: JSONPATH:$.POWER
+Item type: Switch
+Item id: CoffeeMaker_SmallCoffee
 
 Label: Large coffee
 MQTT state topic: stat/coffee_maker/STATUS
 MQTT command topic: cmnd/coffee_maker/PB2
 Incoming value transformation: JSONPATH:$.POWER
+Item type: Switch
+Item id: CoffeeMaker_LargeCoffee
 
 Label: Tea water
 MQTT state topic: stat/coffee_maker/STATUS
 MQTT command topic: cmnd/coffee_maker/PB3
 Incoming value transformation: JSONPATH:$.POWER
+Item type: Switch
+Item id: CoffeeMaker_TeaWater
+
+Label: Last log entry
+MQTT state topic: stat/coffee_maker/LOG
+Item type: String
+Item id: CoffeeMaker_LastLogEntry
 ```
 
 ### Sitemap
 ```
 Switch item=CoffeeMaker_OnOff label="On / off" icon="switch"
-Text item=CoffeeMaker_CoffeeMakerStatus label="Status" icon="rgb"
-Text item=CoffeeMaker_LastLogEntry label="Letztes Ereignis" icon="text"
-Switch item=CoffeeMaker_SmallCoffee label="Kaffee klein" icon="kitchen" visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
-Switch item=CoffeeMaker_LargeCoffee label="Kaffee groß" icon="kitchen" visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]      	
-Switch item=CoffeeMaker_TeaWater label="Teewasser" icon="kitchen" visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
+Default item=CoffeeMaker_CoffeeMakerStatus label="Status" icon="rgb"
+Default item=CoffeeMaker_LastLogEntry label="Letztes Ereignis" icon="text"
+Switch item=CoffeeMaker_SmallCoffee label="Kaffee klein" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
+Switch item=CoffeeMaker_LargeCoffee label="Kaffee groß" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]      	
+Switch item=CoffeeMaker_TeaWater label="Teewasser" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
 ```
 
 ## IFTTT applet
 
-*WIP*
+* expose commands to be linked in Openhab cloud service settings
+* create IFTTT applet
+  * If: Google Assistant / say a simple phrase
+  * Then: Openhab / Send a command
