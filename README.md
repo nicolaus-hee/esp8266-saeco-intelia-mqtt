@@ -37,6 +37,8 @@ I'm using the [MQTT binding for openHAB](https://www.openhab.org/addons/bindings
 
 ### Channels & items
 
+When all channels are added and items created, your list of channels should [look like this](https://github.com/nicolaus-hee/esp8266-saeco-intelia-mqtt/blob/master/images/mqtt_channels.JPG).
+
 ```
 Label: Coffee maker status
 MQTT state topic: stat/coffee_maker/STATUS
