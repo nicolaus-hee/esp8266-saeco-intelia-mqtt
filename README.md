@@ -1,5 +1,7 @@
 # esp8266-saeco-intelia-mqtt
-Control a Philips Saeco Intelia coffee maker with an ESP8266 and MQTT.
+Control this [Philips Saeco Intelia coffee maker](https://www.philips.de/c-p/HD8751_11/saeco-intelia-kaffeevollautomat) with an ESP8266 and MQTT.
+
+![Coffee machine](https://images.philips.com/is/image/PhilipsConsumer/HD8751_11-IMS-de_DE?wid=494&hei=435&$pnglarge$)
 
 ## Objective & inspiration
 
@@ -23,6 +25,17 @@ I was inspired by [OpHaCo's smart coffee maker project](https://github.com/OpHaC
 * 4 x 2N2222A transistor (1 for every button we want to trigger)
 * 4 x 1 kΩ resistor (1 for every button we want to trigger)
 * A prototype board, basic wire etc.
+
+## Building the board
+
+![Coffee machine control board](https://github.com/nicolaus-hee/esp8266-saeco-intelia-mqtt/blob/master/images/coffee_machine_control_board.jpg)
+Coffee machine control board (before wiring it up)
+
+![Prototype board (without ESP8266)](https://github.com/nicolaus-hee/esp8266-saeco-intelia-mqtt/blob/master/images/prototype_board_without_esp8266.jpg)
+Prototype board (withotu ESP8266)
+
+![Prototype board inside coffee machine](https://github.com/nicolaus-hee/esp8266-saeco-intelia-mqtt/blob/master/images/prototype_board_with_esp8266_in_coffee_machine.jpg)
+Prototype board inside coffee machine
 
 ## What the code does
 
