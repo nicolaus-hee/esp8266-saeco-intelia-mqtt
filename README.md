@@ -1,5 +1,5 @@
 # esp8266-saeco-intelia-mqtt
-Control this [Philips Saeco Intelia coffee maker](https://www.philips.de/c-p/HD8751_11/saeco-intelia-kaffeevollautomat) with an ESP8266 and MQTT.
+Control this [Philips Saeco Intelia coffee maker](https://www.philips.de/c-p/HD8751_11/saeco-intelia-kaffeevollautomat) with an ESP8266 and MQTT (via openHAB and Google Assistant).
 
 ![Coffee machine](https://images.philips.com/is/image/PhilipsConsumer/HD8751_11-IMS-de_DE?wid=494&hei=435&$pnglarge$)
 
@@ -57,7 +57,7 @@ cmnd/coffee_maker/PB3 | (none) | Make tea water
 
 ## openHAB integration
 
-I'm using the [MQTT binding for openHAB](https://www.openhab.org/addons/bindings/mqtt/) (currently version 2.4.0).
+I'm using the [MQTT binding for openHAB](https://www.openhab.org/addons/bindings/mqtt/).
 
 ### Channels & items
 
@@ -117,17 +117,21 @@ Switch item=CoffeeMaker_TeaWater label="Tea water" icon="kitchen" mappings=[ON="
 
 ## Google Assistant integration
 
-* Expose commands to be linked in [openHAB cloud connector](https://www.openhab.org/v2.3/addons/integrations/openhabcloud/) settings
+* Expose items to [openHAB cloud connector](https://www.openhab.org/docs/ecosystem/google-assistant/) (Settings > openHAB cloud > Items to expose)
 
-### Via IFTTT
+### Option 1: Via IFTTT
 * Create IFTTT applet
 * If: Google Assistant / Say a simple phrase
-* Then: openHAB / Send a command
+* Then: openHAB / Send a command to item (Power [ON, OFF], Small coffee...)
+* Your Google Assistant devices will now respond to the defined 'simple phrase'
+* Advantage of IFTTT: You can simply add commands other than power on/off.
 
-### Via OpenHAB
-* Make sure the CoffeeMaker_Power item has Google Assistant meta data assigned in openHAB
-* In Google Home app, add openHAB account
-* (If you had already done the previous step: Tell app to refresh / sync devices)
+### Option 2: Via OpenHAB
+* Make sure the `CoffeeMaker_Power` item has Google Assistant `Coffee_Maker` tag assigned in openHAB
+* In Google Home app, add openHAB account (say "talk to openHAB")
+* (If you had already done the previous step: say "refresh devices")
+* You will see a coffee maker icon popup
+* Your Google Assistant devices will now understand "turn on/off coffee maker" commands (but nothing else)
 
 ## What the code does not do / possible extensions
 
