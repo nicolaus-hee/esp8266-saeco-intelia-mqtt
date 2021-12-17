@@ -139,3 +139,4 @@ Switch item=CoffeeMaker_TeaWater label="Tea water" icon="kitchen" mappings=[ON="
 - [ ] Skip decalcification warning
 - [ ] Push cup under coffee outlet (and only after heat up flushing ;-))
 - [ ] Coffee consumption statistics
+ 
