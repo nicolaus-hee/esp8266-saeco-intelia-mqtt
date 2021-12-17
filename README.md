@@ -44,6 +44,17 @@ Prototype board inside coffee machine
 * Communicate status info to MQTT server
 * Listen to MQTT server for commands
 
+## MQTT integration
+
+Topic | Payload | Comment
+----- | ------- | --------
+stat/coffee_maker/STATUS | {"POWER":"ON", "STATUS":"GREEN"} | Published upon changes
+stat/coffee_maker/LOG | String, e.g. "switching machine on" | Published upon events
+cmnd/coffee_maker/PB4 | ON, OFF | Power on/off
+cmnd/coffee_maker/PB1 | (none) | Make small coffee
+cmnd/coffee_maker/PB2 | (none) | Make large coffee
+cmnd/coffee_maker/PB3 | (none) | Make tea water
+
 ## openHAB integration
 
 I'm using the [MQTT binding for openHAB](https://www.openhab.org/addons/bindings/mqtt/) (currently version 2.4.0).
@@ -60,11 +71,12 @@ Item type: String
 Item id: CoffeeMaker_CoffeeMakerStatus
 
 Label: On / Off
-MQTT state topic: stat/coffee_maker/POWER
+MQTT state topic: stat/coffee_maker/STATUS
 MQTT command topic: cmnd/coffee_maker/PB4
 Incoming value transformation: JSONPATH:$.POWER
 Item type: Switch
 Item id: CoffeeMaker_OnOff
+Item meta data: Google Assistant > Coffee Maker
 
 Label: Small coffee
 MQTT state topic: stat/coffee_maker/STATUS
@@ -103,12 +115,19 @@ Switch item=CoffeeMaker_LargeCoffee label="Large coffee" icon="kitchen" mappings
 Switch item=CoffeeMaker_TeaWater label="Tea water" icon="kitchen" mappings=[ON="Make"] visibility=[CoffeeMaker_CoffeeMakerStatus=="GREEN"]
 ```
 
-## IFTTT applet & Google Assistant integration
+## Google Assistant integration
 
 * Expose commands to be linked in [openHAB cloud connector](https://www.openhab.org/v2.3/addons/integrations/openhabcloud/) settings
+
+### Via IFTTT
 * Create IFTTT applet
 * If: Google Assistant / Say a simple phrase
 * Then: openHAB / Send a command
+
+### Via OpenHAB
+* Make sure the CoffeeMaker_Power item has Google Assistant meta data assigned in openHAB
+* In Google Home app, add openHAB account
+* (If you had already done the previous step: Tell app to refresh / sync devices)
 
 ## What the code does not do / possible extensions
 
